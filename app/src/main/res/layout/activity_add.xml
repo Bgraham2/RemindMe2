@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AddActivity">
+
+    <Button
+        android:id="@+id/btnReminder"
+        android:text="Remind me to?"
+        android:textColor="#D3D3D3"
+        android:backgroundTint="#33416A"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textSize="20dp"
+        android:textColor="#33416A"
+        android:visibility="invisible"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="On Which Days?"
+        android:textColor="#000000"
+        android:paddingBottom="5dp"
+        android:textSize="20dp"
+        android:layout_gravity="center_horizontal" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnSunday"
+            android:text="S"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:textColor="#D3D3D3"
+            android:layout_margin="3dp"
+            android:background="@drawable/day_button_default"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btnMonday"
+            android:text="M"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:textColor="#D3D3D3"
+            android:layout_margin="3dp"
+            android:background="@drawable/day_button_default"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btnTuesday"
+            android:text="T"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:textColor="#D3D3D3"
+            android:layout_margin="3dp"
+            android:background="@drawable/day_button_default"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btnWednesday"
+            android:text="W"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:textColor="#D3D3D3"
+            android:layout_margin="3dp"
+            android:background="@drawable/day_button_default"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btnThursday"
+            android:text="T"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:textColor="#D3D3D3"
+            android:layout_margin="3dp"
+            android:background="@drawable/day_button_default"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btnFriday"
+            android:text="F"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:textColor="#D3D3D3"
+            android:layout_margin="3dp"
+            android:background="@drawable/day_button_default"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btnSaturday"
+            android:text="S"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:textColor="#D3D3D3"
+            android:layout_margin="3dp"
+            android:background="@drawable/day_button_default"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnTime"
+        android:text="At what time?"
+        android:textColor="#D3D3D3"
+        android:backgroundTint="#33416A"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tvTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:textColor="#33416A"
+        android:layout_gravity="center_horizontal"
+        android:visibility="invisible" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnCancel"
+            android:text="Canel"
+            android:layout_width="0dp"
+            android:layout_weight="5"
+            android:textColor="#D3D3D3"
+            android:backgroundTint="#33416A"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btnSave"
+            android:text="Save"
+            android:layout_width="0dp"
+            android:layout_weight="5"
+            android:textColor="#D3D3D3"
+            android:backgroundTint="#33416A"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+</LinearLayout>
