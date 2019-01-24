@@ -73,7 +73,7 @@ public class AddActivity extends AppCompatActivity {
 
                 final AlertDialog aTitle = dialog.create();
 
-                //Hides the button and makes the TextView visible showing the title set by hte user.
+                //Hides the button and makes the TextView visible showing the title set by the user.
                 sButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -101,7 +101,7 @@ public class AddActivity extends AppCompatActivity {
             }
         });
 
-        //The following day buttons just toggle boolean value, change button background color, and show Toast (bSunday -> bFriday)
+        //The following day buttons just toggle a boolean value, change button background color, and show Toast (bSunday -> bFriday)
         bSunday.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -245,8 +245,9 @@ public class AddActivity extends AppCompatActivity {
 
                         Toast.makeText(AddActivity.this, "Time added", Toast.LENGTH_SHORT).show();
 
+                        //For values less than 10 adds a 0 to the front.
                         if(minute < 10) {
-                            String minutes = "0" + minute;  //For values less than 10 adds a 0 to the front.
+                            String minutes = "0" + minute;
 
                             if (hour > 12) {
                                 text = hour - 12 + ":" + minutes + "  PM";
@@ -274,7 +275,7 @@ public class AddActivity extends AppCompatActivity {
             }
         });
 
-        //Cancels AddActivity
+        //Cancels AddActivity and returns user to main screen
         bCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -291,7 +292,7 @@ public class AddActivity extends AppCompatActivity {
 
                 int index = 0;
 
-                //The next 7 if statments tracks days selected by the boolean value.
+                //The next 7 if statments creates a string of the days selected by the boolean value.
                 if(isSun) {
                     selectedDays[index] = 1;
                     index++;
