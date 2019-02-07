@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     DBHelper myDB;
     ArrayList<Reminder> reminderList;
     Reminder reminder;
+    ListView lv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //This section populates the list view from a SQLite database.
-        ListView lv = findViewById(R.id.lvItems);
+        lv = findViewById(R.id.lvItems);
         FloatingActionButton fab = findViewById(R.id.btnFab);
 
         myDB = new DBHelper(this);
@@ -106,6 +107,27 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, AddActivity.class));
             }
         });
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        myDB = new DBHelper(this);
+
+        reminderList = new ArrayList<>();
+        Cursor data = myDB.getListContents();
+
+        if(data.getCount() != 0) {
+            while(data.moveToNext()) {
+                reminder = new Reminder(data.getString(1), data.getString(2), data.getString(3));
+                reminderList.add(reminder);
+            }
+        }
+
+        final myListAdapter listAdapter = new myListAdapter(this, R.layout.list_view_row, reminderList);
+        lv.setAdapter(listAdapter);
+
     }
 
 }

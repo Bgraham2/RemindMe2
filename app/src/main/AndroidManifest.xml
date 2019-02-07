@@ -20,7 +20,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AddActivity"></activity>
+        <activity
+            android:name=".AddActivity" />
 
         <receiver android:name=".Notification_receiver"/>
     </application>

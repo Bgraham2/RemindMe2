@@ -250,15 +250,15 @@ public class AddActivity extends AppCompatActivity {
                             String minutes = "0" + minute;
 
                             if (hour > 12) {
-                                text = hour - 12 + ":" + minutes + "  PM";
+                                text = hour - 12 + ":" + minutes + "PM";
                             } else {
-                                text = hour + ":" + minutes + "  AM";
+                                text = hour + ":" + minutes + "AM";
                             }
                         } else {
                             if (hour > 12) {
-                                text = hour - 12 + ":" + minute + "  PM";
+                                text = hour - 12 + ":" + minute + "PM";
                             } else {
-                                text = hour + ":" + minute + "  AM";
+                                text = hour + ":" + minute + "AM";
                             }
 
                         }
@@ -279,7 +279,8 @@ public class AddActivity extends AppCompatActivity {
         bCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(AddActivity.this, MainActivity.class));
+                //startActivity(new Intent(AddActivity.this, MainActivity.class));
+                finish();
             }
         });
 
@@ -385,7 +386,8 @@ public class AddActivity extends AppCompatActivity {
                     Toast.makeText(AddActivity.this, "Please select the days for the reminder.", Toast.LENGTH_SHORT).show();
                 }
 
-                startActivity(new Intent(AddActivity.this, MainActivity.class));
+                //startActivity(new Intent(AddActivity.this, MainActivity.class));
+                finish();
 
             }
         });

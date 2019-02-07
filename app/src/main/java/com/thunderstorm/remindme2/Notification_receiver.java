@@ -25,12 +25,16 @@ public class Notification_receiver extends BroadcastReceiver {
         if(Build.VERSION.SDK_INT >= 26) {
             NotificationChannel channel = new NotificationChannel("default", "channel1", NotificationManager.IMPORTANCE_DEFAULT);
             channel.setDescription("channel1");
+            channel.enableLights(true);           //Added to to get the LED to fire
+            channel.setLightColor(Color.BLUE);    //Added to to get the LED to fire
             if (notificationManager != null) {
                 notificationManager.createNotificationChannel(channel);
             }
         }
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, "default")
+                .setDefaults(0)  //Added to to get the LED to fire
+                .setOngoing(true)  //Added to stop notifications from being deleted by swiping.
                 .setSmallIcon(R.mipmap.ic_launcher)
                 .setLargeIcon(BitmapFactory.decodeResource(context.getResources(), R.mipmap.ic_launcher))
                 .setContentTitle("Reminding You To:")
