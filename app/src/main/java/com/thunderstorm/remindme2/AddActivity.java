@@ -399,10 +399,27 @@ public class AddActivity extends AppCompatActivity {
     @RequiresApi(api = Build.VERSION_CODES.N)
     private void scheduleNotification(Context c, int days) {
         Calendar calendar = Calendar.getInstance();
-        calendar.set(Calendar.DAY_OF_WEEK, days);
-        calendar.set(Calendar.HOUR_OF_DAY, hour);
-        calendar.set(Calendar.MINUTE, minute);
-        calendar.set(Calendar.SECOND, 0);
+        int currentDay = calendar.get(Calendar.DAY_OF_WEEK);
+
+        if(days < currentDay) {
+            int nextWeek = calendar.get(Calendar.WEEK_OF_MONTH);
+
+            calendar.set(Calendar.WEEK_OF_MONTH, ++nextWeek);
+            calendar.set(Calendar.DAY_OF_WEEK, days);
+            calendar.set(Calendar.HOUR_OF_DAY, hour);
+            calendar.set(Calendar.MINUTE, minute);
+            calendar.set(Calendar.SECOND, 0);
+            calendar.set(Calendar.MILLISECOND, 0);
+
+        } else {
+            calendar.set(Calendar.DAY_OF_WEEK, days);
+            calendar.set(Calendar.HOUR_OF_DAY, hour);
+            calendar.set(Calendar.MINUTE, minute);
+            calendar.set(Calendar.SECOND, 0);
+            calendar.set(Calendar.MILLISECOND, 0);
+
+        }
+
 
         Intent intent = new Intent(getApplicationContext(), Notification_receiver.class);
         intent.putExtra("Title", reminder);

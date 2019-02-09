@@ -34,15 +34,13 @@ public class Notification_receiver extends BroadcastReceiver {
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, "default")
                 .setDefaults(0)  //Added to to get the LED to fire
-                .setOngoing(true)  //Added to stop notifications from being deleted by swiping.
                 .setSmallIcon(R.mipmap.ic_launcher)
                 .setLargeIcon(BitmapFactory.decodeResource(context.getResources(), R.mipmap.ic_launcher))
                 .setContentTitle("Reminding You To:")
                 .setContentText(reminder)
                 .setLights(Color.BLUE, 3000, 3000)
                 .setVibrate(new long[] { 1000, 1000, 1000, 1000, 1000 })
-                .setSound(sound)
-                .setAutoCancel(true);
+                .setSound(sound);
 
         if (notificationManager != null) {
             notificationManager.notify( id ,builder.build());
