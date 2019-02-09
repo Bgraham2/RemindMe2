@@ -13,3 +13,5 @@ The app allows users to set reminders for repetitive tasks.
 2/7/2019 - Fixed LED notification. Fixed multiple activities being created. Stopped notifcation from being deleted. Updated text size and layout. 
 
 2/7/2019 - Still need to change color scheme and past notification being created.
+
+2/9/2019 - past notifications fixed, testing all bug fixes. Color scheme and code clean up next. 
